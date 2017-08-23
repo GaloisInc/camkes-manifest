@@ -56,6 +56,7 @@
         <linkfile src="libsel4simple-default" dest="libs/libsel4simple-default"/>
         <linkfile src="libsel4bench" dest="libs/libsel4bench"/>
         <linkfile src="libsel4allocman" dest="libs/libsel4allocman"/>
+        <linkfile src="libsel4vmm" dest="libs/libsel4vmm"/>
     </project>
 
     <project remote="galois" name="util_libs.git" path="projects/util_libs" revision="devel">
@@ -63,6 +64,8 @@
         <linkfile src="libcpio" dest="libs/libcpio"/>
         <linkfile src="libelf" dest="libs/libelf"/>
         <linkfile src="libutils" dest="libs/libutils"/>
+        <linkfile src="libethdrivers" dest="libs/libethdrivers"/>
+        <linkfile src="libpci" dest="libs/libpci"/>
     </project>
 
     <project name="musllibc.git" path="libs/libmuslc" revision="6.0.x-compatible"/>
@@ -143,5 +146,17 @@
         <linkfile src="apps/vga_test" dest="apps/vga_test"/>
     </project>
 
+    <project remote="galois" name="camkes-vm.git" path="projects/vm" revision="devel">
+        <linkfile src="tools/elf" dest="tools/elf"/>
+        <linkfile src="apps/vm" dest="apps/vm"/>
+        <linkfile src="apps/c162_twovm" dest="apps/c162_twovm"/>
+        <linkfile src="apps/optiplex9020_onevm" dest="apps/optiplex9020_onevm"/>
+        <linkfile src="apps/cma34cr_minimal" dest="apps/cma34cr_minimal"/>
+        <linkfile src="apps/cma34cr_singlevm" dest="apps/cma34cr_singlevm"/>
+        <linkfile src="apps/cma34cr_twovm" dest="apps/cma34cr_twovm"/>
+        <linkfile src="apps/cma34cr_ubuntu" dest="apps/cma34cr_ubuntu"/>
+        <linkfile src="apps/cma34cr_centos" dest="apps/cma34cr_centos"/>
+        <linkfile src="apps/cma34cr_vchan" dest="apps/cma34cr_vchan"/>
+    </project>
 
 </manifest>
