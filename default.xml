@@ -21,7 +21,7 @@
   <default revision="master" remote="seL4"/>
   
   <!-- this is needed for Camkes Rust generation -->
-  <project name="rs_camkes.git" path="tools/camkes">
+  <project remote="galois" name="rs_camkes.git" path="tools/camkes" revision="master">
     <linkfile dest="Makefile" src="toplevel.mk"/>
     <linkfile dest="Kbuild" src="Kbuild"/>
     <linkfile dest="libs/libsel4camkes" src="libsel4camkes"/>
@@ -138,7 +138,7 @@
   </project>
 
   <!-- this is needed to properly tell Cargo what to do -->
-  <project name="rs_seL4_tools.git" path="projects/seL4_tools">
+  <project remote="galois" name="rs_seL4_tools.git" path="projects/seL4_tools" revision="master">
     <linkfile dest="tools/common" src="common-tool"/>
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
