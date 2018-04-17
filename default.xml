@@ -16,7 +16,8 @@
   
   <default remote="seL4" revision="master"/>
   
-  <project name="camkes-tool.git" path="tools/camkes" revision="aab7fb4d6b395fe2617b735be7bbdcab1fdbdbb7" upstream="master">
+  <!-- this is needed for Camkes Rust generation -->
+  <project name="rs_camkes.git" path="tools/camkes">
     <linkfile dest="Makefile" src="toplevel.mk"/>
     <linkfile dest="Kbuild" src="Kbuild"/>
     <linkfile dest="libs/libsel4camkes" src="libsel4camkes"/>
@@ -24,6 +25,7 @@
     <linkfile dest="README.md" src="docs/index.md"/>
     <linkfile dest="CMakeLists.txt" src="camkes-top-level.cmake"/>
   </project>
+  <!-- maybe change? -->
   <project name="camkes.git" path="projects/camkes" revision="2d2be2b96a2cd9ff26b8087d5942052254c9ea43" upstream="master">
     <linkfile dest="Kconfig" src="Kconfig"/>
     <linkfile dest="configs" src="configs"/>
@@ -92,22 +94,29 @@
     <linkfile dest="apps/rumprun_rust" src="apps/rumprun_rust"/>
     <linkfile dest="apps/vgatest" src="apps/vgatest"/>
   </project>
+  <!-- no change -->
   <project name="capdl.git" path="projects/capdl" revision="9608a16b87fe9310c4dd58c1e8d7d8d40d6857e5" upstream="master">
     <linkfile dest="apps/capdl-loader-experimental" src="capdl-loader-app"/>
     <linkfile dest="tools/capDL" src="capDL-tool"/>
     <linkfile dest="tools/python-capdl" src="python-capdl-tool"/>
   </project>
+  <!-- no change -->
   <project name="global-components.git" path="projects/global-components" remote="SEL4PROJ" revision="8e2ef7eac3e83585888013ab57c44a1b1620a641" upstream="master"/>
+  <!-- no change -->
   <project name="musllibc.git" path="projects/musllibc" revision="d5d5d04e4f99f9900269350e5bb0f9f9b0a27ca9" upstream="sel4">
     <linkfile dest="libs/libmuslc" src="."/>
   </project>
+  <!-- no change -->
   <project name="pruner.git" path="tools/pruner" revision="9b112d39e8af68db33d848966816ee12f14a6f4f" upstream="master"/>
+  <!-- no change -->
   <project name="rumprun.git" path="projects/rumprun" remote="SEL4PROJ" revision="fc53174d76b03fb627b7b96240c85bb776105c90" upstream="master">
     <linkfile dest="libs/rumprun" src="."/>
   </project>
+  <!-- no change -->
   <project name="seL4.git" path="kernel" revision="511be7d91dba84fea3d227d01a0475503b415cbe" upstream="master">
     <linkfile dest="libs/libsel4" src="libsel4"/>
   </project>
+  <!-- no change -->
   <project name="seL4_libs.git" path="projects/seL4_libs" revision="a34751b760261a8bb519d33a5dd440a24c724f8d" upstream="master">
     <linkfile dest="libs/libsel4muslcsys" src="libsel4muslcsys"/>
     <linkfile dest="libs/libsel4platsupport" src="libsel4platsupport"/>
@@ -123,12 +132,15 @@
     <linkfile dest="libs/libsel4test" src="libsel4test"/>
     <linkfile dest="libs/libsel4serialserver" src="libsel4serialserver"/>
   </project>
-  <project name="seL4_tools.git" path="projects/seL4_tools" revision="a242cb7c4fdbdce6d9fd01f5b375c7137ed55f05" upstream="master">
+
+  <!-- this is needed to properly tell Cargo what to do -->
+  <project name="rs_seL4_tools.git" path="projects/seL4_tools">
     <linkfile dest="tools/common" src="common-tool"/>
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
     <linkfile dest="init-build.sh" src="cmake-tool/init-build.sh"/>
   </project>
+  <!-- no change -->
   <project name="util_libs.git" path="projects/util_libs" revision="b89a19a3a566f2e2289b1114c55b12fff12865be" upstream="master">
     <linkfile dest="libs/libplatsupport" src="libplatsupport"/>
     <linkfile dest="libs/libcpio" src="libcpio"/>
