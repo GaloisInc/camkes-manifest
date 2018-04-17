@@ -11,10 +11,9 @@
      @TAG(DATA61_BSD)
 -->
 <manifest>
-  <remote fetch="../SEL4PROJ" name="SEL4PROJ"/>
-  <remote fetch="." name="seL4"/>
+  <remote fetch="." name="master"/>
   
-  <default remote="seL4" revision="master"/>
+  <default remote="master" revision="master"/>
   
   <!-- this is needed for Camkes Rust generation -->
   <project name="rs_camkes.git" path="tools/camkes">
