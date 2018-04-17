@@ -21,7 +21,7 @@
   <default revision="master" remote="seL4"/>
   
   <!-- this is needed for Camkes Rust generation -->
-  <project remote="galois" name="rs_camkes.git" path="tools/camkes" revision="master">
+  <project remote="galois" name="camkes-tool.git" path="tools/camkes" revision="rust">
     <linkfile dest="Makefile" src="toplevel.mk"/>
     <linkfile dest="Kbuild" src="Kbuild"/>
     <linkfile dest="libs/libsel4camkes" src="libsel4camkes"/>
@@ -29,8 +29,8 @@
     <linkfile dest="README.md" src="docs/index.md"/>
     <linkfile dest="CMakeLists.txt" src="camkes-top-level.cmake"/>
   </project>
-  <!-- maybe change? -->
-  <project name="camkes.git" path="projects/camkes" revision="2d2be2b96a2cd9ff26b8087d5942052254c9ea43" upstream="master">
+  <!-- this contains our customized Rust apps -->
+  <project remote="galois" name="camkes.git" path="projects/camkes" revision="rust">
     <linkfile dest="Kconfig" src="Kconfig"/>
     <linkfile dest="configs" src="configs"/>
     <linkfile dest="tests" src="tests"/>
@@ -136,9 +136,8 @@
     <linkfile dest="libs/libsel4test" src="libsel4test"/>
     <linkfile dest="libs/libsel4serialserver" src="libsel4serialserver"/>
   </project>
-
   <!-- this is needed to properly tell Cargo what to do -->
-  <project remote="galois" name="rs_seL4_tools.git" path="projects/seL4_tools" revision="master">
+  <project remote="galois" name="seL4_tools.git" path="projects/seL4_tools" revision="rust">
     <linkfile dest="tools/common" src="common-tool"/>
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
