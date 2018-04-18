@@ -27,6 +27,10 @@ Initialize repo with:
 repo init -u https://github.com/GaloisInc/camkes-manifest -m default.xml -b rust
 repo sync
 ```
+Initialize Rust environment with:
+```
+./setup_rust_env.sh
+```
 
 and then you can build a simple app for example with:
 ```
