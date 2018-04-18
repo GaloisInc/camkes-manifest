@@ -20,3 +20,25 @@ Prerequisites, in addition to a standard build system for your target, are:
 * Python
 * Python libraries python-tempita, pyelftools, jinja2 and ply
 * which, realpath and the libxml2 utilities.
+
+## Installation and running
+Initialize repo with:
+```
+repo init -u https://github.com/GaloisInc/camkes-manifest -m default.xml -b rust
+repo sync
+```
+
+and then you can build a simple app for example with:
+```
+make clean; make x86_simple_defconfig; make silentoldconfig; make
+```
+
+and run the resulting image with:
+- For 32-bit targets: 
+```
+qemu-system-x86_64 -m 512 -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99 --enable-kvm -smp 2 -cpu Nehalem,+vmx -nographic
+```
+- For 64-bit targets: 
+```
+qemu-system-x86_64 -m 512 -kernel images/kernel-x86_64-pc99 -initrd images/capdl-loader-experimental-image-x86_64-pc99 --enable-kvm -smp 2 -cpu Nehalem,+vmx -nographic
+```
